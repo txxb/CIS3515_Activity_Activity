@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+const val TEXT_SIZE = ""
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             // TODO Step 2: Implement lambda body to launch new activity and pass value
             adapter = TextSizeAdapter(textSizes){
                 val myIntent = Intent(this@MainActivity, DisplayActivity::class.java)
-                myIntent.putExtra("myTextSize", it)
+                myIntent.putExtra(TEXT_SIZE, it.toFloat())
                 startActivity(myIntent)
             }
 
